@@ -1,1 +1,147 @@
-<data value="">     </data>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的网页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 600px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+        
+        p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .counter {
+            font-size: 1.5em;
+            color: #667eea;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        
+        .features {
+            margin-top: 40px;
+            text-align: left;
+        }
+        
+        .features h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        
+        .features ul {
+            list-style: none;
+        }
+        
+        .features li {
+            color: #666;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .features li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>欢迎来到我的网页 👋</h1>
+        <p>这是一个简单而美观的网页示例。点击下方按钮与网页交互吧！</p>
+        
+        <div class="button-group">
+            <button onclick="increaseCounter()">点击计数 +1</button>
+            <button onclick="resetCounter()">重置</button>
+            <button onclick="showAlert()">显示信息</button>
+        </div>
+        
+        <div class="counter">计数: <span id="count">0</span></div>
+        
+        <div class="features">
+            <h2>功能特性</h2>
+            <ul>
+                <li>响应式设计，适配各种屏幕</li>
+                <li>现代化的视觉风格</li>
+                <li>交互式按钮和计数器</li>
+                <li>流畅的动画效果</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        let count = 0;
+        
+        function increaseCounter() {
+            count++;
+            document.getElementById('count').textContent = count;
+        }
+        
+        function resetCounter() {
+            count = 0;
+            document.getElementById('count').textContent = count;
+        }
+        
+        function showAlert() {
+            alert('你已经点击了按钮 ' + count + ' 次！');
+        }
+    </script>
+</body>
+</html>
